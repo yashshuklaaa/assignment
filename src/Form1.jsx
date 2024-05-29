@@ -15,77 +15,93 @@ const Form = () => {
     const [district, setdistrict] = useState('')
     const [nativeDistrict, setnativeDistrict] = useState('')
     const [occupation, setoccupation] = useState('')
-    const [checkBox, setcheckBox] = useState('')
+    const [checkBox, setcheckBox] = useState(false)
     const [yourName, setyourName] = useState('')
     const [isSubmitting, setisSubmitting] = useState('')
 
     const handleFullName = (e) => {
-        e.preventDefault()
+         
         setfullName(e.target.value)
     }
     const handleEmail = (e) => {
-        e.preventDefault()
+         
         setemail(e.target.value)
     }
     const handleSonOfName = (e) => {
-        e.preventDefault()
+         
         setsonOfName(e.target.value)
     }
     const handleNumber = (e) => {
-        e.preventDefault()
+         
         setnumber(e.target.value)
     }
     const handleGender = (e) => {
-        e.preventDefault()
+         
         setgender(e.target.value)
     }
     const handleCurrentAddress = (e) => {
-        e.preventDefault()
+         
         setcurrentAddress(e.target.value)
     }
     const handelAddress = (e) => {
-        e.preventDefault()
+         
         setAddress(e.target.value)
     }
     const handleState = (e) => {
-        e.preventDefault()
+         
         setstate(e.target.value)
     }
     const handleDistrict = (e) => {
-        e.preventDefault()
+         
         setdistrict(e.target.value)
     }
     const handleNativeDistrict = (e) => {
-        e.preventDefault()
+         
         setnativeDistrict(e.target.value)
     }
     const handleOccupation = (e) => {
-        e.preventDefault()
+         
         setoccupation(e.target.value)
     }
     const handleYourName = (e) => {
-        e.preventDefault()
+         
         setyourName(e.target.value)
     }
     const handleCheckBox = (e) => {
-        e.preventDefault()
+         
         setcheckBox(e.target.value)
     }
     const handleCountry = (e) => {
-        e.preventDefault()
+         
         setcountry(e.target.value)
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+         e.preventDefault()
         // console.log(fullName, sonOfName, number)
     }
-
+     
+    const handleReset=()=>{
+        setfullName('')
+        setemail('')
+        setsonOfName('')
+        setnumber('')
+        setcurrentAddress('')
+        setgender('')
+        setAddress('')
+        setnativeDistrict('')
+        setdistrict('')
+        setcountry('')
+        setstate('')
+        setoccupation('')
+        setyourName('')
+        
+    }
 
 
     return (
         <div className="max-w-screen-xl mx-auto p-6 bg-white rounded-lg shadow-md">
-            <Form >
+            <Form onSubmit={handleSubmit} >
 
                 <div className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -357,13 +373,13 @@ const Form = () => {
                     <div className="mt-6 flex space-x-4">
                         <button
                             type="submit"
-                            // onClick={(e)=>handleSubmit(e)}
                             className="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Submit
                         </button>
                         <button
                             type="button"
+                            onClick={handleReset}
                             className="inline-flex justify-center py-2 px-4 border border-gray-300 shadow-sm text-sm font-medium rounded-md text-gray-700 bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                         >
                             Reset
