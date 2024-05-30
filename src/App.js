@@ -1,11 +1,15 @@
 import React from 'react'
-import Form1 from './Form1'
+
+import RegisterForm from './Form'
 
 const App = () => {
   return (
     <div>
-      <Form1 />
-      </div>
+      <RegisterForm />
+      {/* <p>hii</p> */}
+      {/* <Form1 /> */}
+      <h1>welcome</h1>
+    </div>
   )
 }
 

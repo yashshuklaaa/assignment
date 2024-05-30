@@ -16,7 +16,7 @@ Router.post('/user', async (req, res) => {
             address,
             country,
             state,
-            distict,
+            district,
             nativeDistrict,
             occupation,
             yourName } = await req.body
@@ -29,11 +29,11 @@ Router.post('/user', async (req, res) => {
             address,
             country,
             state,
-            distict,
+            district,
             nativeDistrict,
             occupation,
             yourName)
-        const user = User.create({
+        const users = User.create({
             fullName,
             sonOfName,
             email,
@@ -43,13 +43,13 @@ Router.post('/user', async (req, res) => {
             address,
             country,
             state,
-            distict,
+            district,
             nativeDistrict,
             occupation,
             yourName,
 
         })
-        return res.status(200).json({ status: 'Success', user: user })
+        return res.status(200).json({ status: 'Success', user: users })
 
     } catch (error) {
         return res.status(500).json({ error: error.message })

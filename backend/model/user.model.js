@@ -35,7 +35,7 @@ const UserSchema =new mongoose.Schema({
  state:{
     type:String,
  },
- distict:{
+ district:{
     type:String,
  },
  nativeDistrict:{
